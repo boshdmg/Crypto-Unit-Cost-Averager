@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build-watch": "webpack --config webpack.config.js --watch",
     "build": "webpack --config webpack.config.js"
   },
   "author": "D Garnys",
   "license": "ISC",
   "dependencies": {
-    "figlet": "^1.2.0"
+    "gdax": "^0.4.2"
   },
   "devDependencies": {
     "webpack": "^3.4.1"
