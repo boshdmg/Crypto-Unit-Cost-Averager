@@ -11,7 +11,8 @@
   "author": "D Garnys",
   "license": "ISC",
   "dependencies": {
-    "gdax": "^0.4.2"
+    "gdax": "^0.4.2",
+    "node-storage": "0.0.7"
   },
   "devDependencies": {
     "webpack": "^3.4.1"
