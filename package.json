@@ -1,0 +1,18 @@
+{
+  "name": "auto-dca-gdax",
+  "version": "1.0.0",
+  "description": "Automatically Dollor Cost Average for Etherum on Gdax",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js"
+  },
+  "author": "D Garnys",
+  "license": "ISC",
+  "dependencies": {
+    "figlet": "^1.2.0"
+  },
+  "devDependencies": {
+    "webpack": "^3.4.1"
+  }
+}
