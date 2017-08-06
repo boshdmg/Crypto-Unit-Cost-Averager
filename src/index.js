@@ -13,11 +13,14 @@ store.put('buy.history',[])
             'product_id': 'ETH-EUR',
     };
 
-    var buyETHHigher = {
-        'price': '70',
-        'type': 'market',
-        'product_id': 'ETH-EUR',
-    };
+
+
+var authedClient = new Gdax.AuthenticatedClient(config.key, config.secret, config.password, config.url);
+// authedClient.getAccounts(function(err, response, data){
+//     console.log(data);
+// })
+
+
 
 setInterval(function(){
     publicClient.getProductTicker(function(err, response, data){
@@ -45,20 +48,43 @@ x
              console.log('priceDrop'+priceDrop)
             
         }
-       
-        if(priceDrop < -0.003)
-        {
-            //authedClient.buy(buyETHHigher, callback);
-            var buyHistory = store.get('buy.history');
-            buyHistory.push(new Date().toLocaleString()+" "+currentPrice+" "+70);
-            store.put('buy.history',buyHistory);
 
-        }
-        else
-        {
-            var buyHistory = store.get('buy.history');
-            buyHistory.push(new Date().toLocaleString()+" "+currentPrice+" "+50);
-            store.put('buy.history',buyHistory);
-        }
+        // var buyETHHigher = {
+        //     'price': currentPrice,
+        //     'size': (2/currentPrice).toString(),
+        //     'product_id': 'ETH-EUR',
+        // };
+
+            var buyETHHigher = {
+            'type':'limit',
+            'price': currentPrice,
+            'size': Number(5/currentPrice).toFixed(4).toString(),
+            'product_id': 'ETH-EUR',
+        };
+
+        console.log(buyETHHigher)
+
+        authedClient.buy(buyETHHigher, function(err, response, data){
+            console.log('BUYY'+err);
+            console.log('BUYY'+JSON.stringify(response));
+            console.log('BUYY'+JSON.stringify(data));
+        });
+
+       
+        // if(priceDrop < -0.003)
+        // {
+        //     //authedClient.buy(buyETHHigher, callback);
+        //     var buyHistory = store.get('buy.history');
+        //     buyHistory.push(new Date().toLocaleString()+" "+currentPrice+" "+75);
+        //     store.put('buy.history',buyHistory);
+
+        // }
+        // else
+        // {
+        //     var buyHistory = store.get('buy.history');
+        //     buyHistory.push(new Date().toLocaleString()+" "+currentPrice+" "+50);
+        //     store.put('buy.history',buyHistory);
+        
+        // }
     })
 },10000)
