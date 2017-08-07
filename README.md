@@ -1,26 +1,24 @@
 # Crypto-Unit-Cost-Averager
 
+Automatically buy a an amounth of crypto curreny (currently only Etherum) everyday, to support [unit cost averaging](https://en.wikipedia.org/wiki/Dollar_cost_averaging)
+
+**currently none functional**
+
 Written to run on Node.
 
->node src/index.js
+`npm run start`
 
-
-Requries a config.json in this shape:
-
-```json
+Create a gdaxrc. in this shape:
+~~~json
 {
-    url:'gdax api url',
-    key:'api key',
-    secret:'secret'
-    password:'passcode'
+    url:'',
+    key:'',
+    secret:'',
+    passphrase:''
 }
-```
-
-
+~~~
 
 
 Notes:
-
-Want to use this - but cant get them working with es6?
-- [rc](https://www.npmjs.com/package/rc) to load config 
+Future:
 - [figlet](https://www.npmjs.com/package/figlet) to make the console prettu

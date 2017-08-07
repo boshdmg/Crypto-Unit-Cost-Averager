@@ -4,17 +4,20 @@
   "description": "Automatically Dollor Cost Average for Etherum on Gdax",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build-watch": "webpack --config webpack.config.js --watch",
-    "build": "webpack --config webpack.config.js"
+    "test": "jest --colors --verbose --silent=false",
+    "test-watch": "jest --colors --verbose --watch --silent=false",
+    "start": "babel-node  --presets es2015 ./src/index.js"
   },
   "author": "D Garnys",
   "license": "ISC",
   "dependencies": {
+    "gdax": "github:coinbase/gdax-node",
     "node-storage": "0.0.7",
-    "gdax": "github:coinbase/gdax-node"
+     "rc": "^1.2.1"
   },
   "devDependencies": {
-    "webpack": "^3.4.1"
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "jest": "^20.0.4" 
   }
 }
