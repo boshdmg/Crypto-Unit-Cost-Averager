@@ -11,10 +11,10 @@ Written to run on Node.
 Create a gdaxrc. in this shape:
 ~~~json
 {
-    url:'',
-    key:'',
-    secret:'',
-    passphrase:''
+    "url":"",
+    "key":"",
+    "secret":"",
+    "passphrase":""
 }
 ~~~
 
