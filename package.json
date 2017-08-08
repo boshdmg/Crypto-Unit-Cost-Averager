@@ -13,11 +13,12 @@
   "dependencies": {
     "gdax": "github:coinbase/gdax-node",
     "node-storage": "0.0.7",
-     "rc": "^1.2.1"
+    "rc": "^1.2.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-jest": "^20.0.3",
     "babel-preset-es2015": "^6.24.1",
-    "jest": "^20.0.4" 
+    "jest": "^20.0.4"
   }
 }
