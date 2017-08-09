@@ -1,6 +1,6 @@
 # Crypto-Unit-Cost-Averager
 
-Automatically buy a an amounth of crypto curreny (currently only Etherum) everyday, to support [unit cost averaging](https://en.wikipedia.org/wiki/Dollar_cost_averaging)
+Automatically buy an amount of cryptocurreny (currently only Etherum) everyday, to support [unit cost averaging](https://en.wikipedia.org/wiki/Dollar_cost_averaging)
 
 **currently none functional**
 
@@ -21,4 +21,4 @@ Create a gdaxrc. in this shape:
 
 Notes:
 Future:
-- [figlet](https://www.npmjs.com/package/figlet) to make the console prettu
+- [figlet](https://www.npmjs.com/package/figlet) to make the console pretty
