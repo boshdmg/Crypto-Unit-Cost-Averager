@@ -21,4 +21,4 @@ Create a gdaxrc. in this shape:
 
 Notes:
 Future:
-- [figlet](https://www.npmjs.com/package/figlet) to make the console pretty
+- [figlet](https://www.npmjs.com/package/figlet) to make the console pretty.
