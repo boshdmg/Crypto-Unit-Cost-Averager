@@ -3,7 +3,7 @@ import config from './config';
 
 export default function buy(amount,atPrice)
 {
-    console.log(Gdax);
+    console.log(Gdax.buy);
 
     let authedClient = new Gdax.AuthenticatedClient(config.key, config.secret, config.password, config.url);
     let buyETHHigher = {

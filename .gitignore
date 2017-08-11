@@ -1,3 +1,4 @@
 node_modules
 .gdaxrc
 store.json
+npm-debug.log
