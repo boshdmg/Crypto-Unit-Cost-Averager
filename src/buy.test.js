@@ -1,8 +1,8 @@
 import buy from './buy';
-import gdaxAuthenticated from './exchangeClients';
+import {gdaxAuthenticated} from './exchangeClients';
 import config from './config';
 
-jest.mock('./exchangeClients',()=>jest.fn());
+jest.mock('./exchangeClients',()=>{return {gdaxAuthenticated:jest.fn()}});
 jest.mock('./config',()=> {return {product:'test-test'}});
 
 describe('when buying coin',()=>{

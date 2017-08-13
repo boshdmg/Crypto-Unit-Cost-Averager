@@ -1,8 +1,8 @@
-import gdaxAuthenticated from './exchangeClients';
+import {gdaxAuthenticated} from './exchangeClients';
 import config from './config';
 
 export default function(amount,atPrice)
-{
+{    
     let size = Number(amount/atPrice).toFixed(4).toString();
 
     let transaction = {

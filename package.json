@@ -11,6 +11,7 @@
   "author": "D Garnys",
   "license": "ISC",
   "dependencies": {
+    "fs": "0.0.1-security",
     "gdax": "github:coinbase/gdax-node",
     "node-storage": "0.0.7",
     "rc": "^1.2.1"
