@@ -1,44 +1,71 @@
 import buy from './buy';
-import {gdaxAuthenticated} from './exchangeClients';
+import {gdaxAuthenticated,gdaxPublic} from './exchangeClients';
 import config from './config';
 
-jest.mock('./exchangeClients',()=>{return {gdaxAuthenticated:jest.fn()}});
-jest.mock('./config',()=> {return {product:'test-test'}});
+jest.mock('./exchangeClients',()=>{
+    return {
+        gdaxAuthenticated:jest.fn(),
+        gdaxPublic:jest.fn()
+    }
+});
 
-describe('when buying coin',()=>{
+jest.mock('./config',()=>jest.fn());
 
+    
+describe('when buying coins',()=>{
+
+    let currentValue =200;
+    
     let expectedTransaction = {
         'type':'limit',
-        'price': 200,
+        'price': currentValue,
         'size': '0.0250',
         'product_id': 'test-test'
     }
 
     beforeEach(()=>{        
         gdaxAuthenticated.buy=jest.fn();  
-        buy(5,200);
+
+        gdaxPublic.getProductTicker= jest.fn(() => {
+            return Promise.resolve({  bid: currentValue })
+        });
+
+        config.amount=5
+        config.product='test-test'
+
+        buy();
     })
     
-    it('should buy the coins at the given rate',()=>{
+    it('should buy the coins at the current rate',()=>{
         expect(gdaxAuthenticated.buy).toHaveBeenCalledWith(expectedTransaction,expect.any(Function));
     });
 });
 
-describe('when buying coin',()=>{
+describe('when buying coin 2',()=>{
+ 
+     let currentValue =200;
 
     let expectedTransaction = {
         'type':'limit',
-        'price': 200,
+        'price': currentValue,
         'size': '25.0000',
         'product_id': 'test-test'
     }
 
     beforeEach(()=>{        
         gdaxAuthenticated.buy=jest.fn();  
-        buy(5000,200);
+
+        gdaxPublic.getProductTicker= jest.fn(() => {
+            return Promise.resolve({  bid: currentValue });
+        });
+
+        config.amount=5000
+        config.product='test-test'
+
+        buy();
     })
     
-    it('should buy the coins at the given rate',()=>{
+    it('should buy the coins at the current rate',()=>{
         expect(gdaxAuthenticated.buy).toHaveBeenCalledWith(expectedTransaction,expect.any(Function));
     });
 });
