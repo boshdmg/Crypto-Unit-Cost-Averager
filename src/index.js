@@ -37,5 +37,5 @@ let go =()=>{
     })
 }
 
-setInterval(()=>{go()},1000 * 60 * config.amount)
+setInterval(()=>{go()},1000 * 60 * 60 * config.amount)
 go()

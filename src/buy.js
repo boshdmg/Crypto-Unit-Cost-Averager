@@ -13,6 +13,6 @@ export default function(amount,atPrice)
     };
 
      gdaxAuthenticated.buy(transaction,function(err, response, data){
-        console.log(`BUY ${size} of ${config.product} for ${amount} @ ${atPrice}`);
+        console.log(`BUY ${size} of ${config.product} for ${amount} @ ${atPrice} @ ${new Date().toLocaleString()}`);
     });
 }
