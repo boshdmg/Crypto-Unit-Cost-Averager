@@ -5,8 +5,6 @@ describe('when the lastest price is more than 6 percetn lower than the average o
     let recentPrices = [100,100,100,100,100];
     let latestPrice= 92.9;
 
-    console.log(dropChecker)
-
     it('should indicate prices are dropping',()=>{
         expect(dropChecker(latestPrice,recentPrices)).toBeTruthy()
     });
