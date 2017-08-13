@@ -26,12 +26,12 @@ interval => is the intervals in hours you want to buy.
 
 ---
 
-#####Future functionality backlog
+##### Future functionality backlog
 - Buy more if the price is dropping
 - Be able to buy Litecoin and Bitcoin
 - Clear unfilled orders
 - Add a UI - considering Vue.js
-- Investigate sockets to buy on price drops without polling
+- Investigate [sockets api](https://docs.gdax.com/#websocket-feed) to buy on price drops without polling
 - Phone notification when a purchase is made
 - Withdraw money from exchange to wallet automically
 
