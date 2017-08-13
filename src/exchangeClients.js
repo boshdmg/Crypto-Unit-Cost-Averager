@@ -1,6 +1,4 @@
 import config from './config';
+import gdax from 'gdax';
 
-export function gdaxAuthenticated()
-{
-    return new Gdax.AuthenticatedClient(config.key, config.secret, config.password, config.url);
-}
+export default new gdax.AuthenticatedClient(config.key, config.secret, config.passphrase, config.url);

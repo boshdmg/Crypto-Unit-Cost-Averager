@@ -1,26 +1,18 @@
 import gdaxAuthenticated from './exchangeClients';
 import config from './config';
 
-export default function buy(amount,atPrice)
+export default function(amount,atPrice)
 {
+    let size = Number(amount/atPrice).toFixed(4).toString();
+
     let transaction = {
         'type':'limit',
         'price': atPrice,
-        'size': Number(amount/atPrice).toFixed(4).toString(),
+        'size': size,
         'product_id': config.product
     };
 
-     gdaxAuthenticated.buy(transaction)
-    //console.log(authedClient.B);
-  // authedClient.buy(1);
-
-   //Gdax.B();
-
-    // authedClient.buy(transaction, function(err, response, data){
-    //     console.log('BUYY'+err);
-    //     console.log('BUYY'+JSON.stringify(response));
-    //     console.log('BUYY'+JSON.stringify(data));
-    // });
+     gdaxAuthenticated.buy(transaction,function(err, response, data){
+        console.log(`BUY ${size} of ${config.product} for ${amount} @ ${atPrice}`);
+    });
 }
-
-   

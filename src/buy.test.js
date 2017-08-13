@@ -20,7 +20,7 @@ describe('when buying coin',()=>{
     })
     
     it('should buy the coins at the given rate',()=>{
-        expect(gdaxAuthenticated.buy).toHaveBeenCalledWith(expectedTransaction);
+        expect(gdaxAuthenticated.buy).toHaveBeenCalledWith(expectedTransaction,expect.any(Function));
     });
 });
 
@@ -39,6 +39,6 @@ describe('when buying coin',()=>{
     })
     
     it('should buy the coins at the given rate',()=>{
-        expect(gdaxAuthenticated.buy).toHaveBeenCalledWith(expectedTransaction);
+        expect(gdaxAuthenticated.buy).toHaveBeenCalledWith(expectedTransaction,expect.any(Function));
     });
 });

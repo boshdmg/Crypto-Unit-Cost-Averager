@@ -5,5 +5,7 @@ import rc from 'rc';
         key: '',
         secret: '',
         url: 'https://api.gdax.com',
-        product :'ETH-EUR'
+        product :'ETH-EUR',
+        amount : '',
+        interval: 1
     });
