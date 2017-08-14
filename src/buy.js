@@ -7,7 +7,7 @@ export default function()
     gdaxPublic.getProductTicker()
     .then(data=>{
         
-        let currentPrice =data.bid
+        let currentPrice =data.ask
 
         let size = Number(config.amount/currentPrice).toFixed(4).toString();
 

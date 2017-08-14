@@ -27,7 +27,7 @@ describe('when buying coins',()=>{
         gdaxAuthenticated.buy=jest.fn();  
 
         gdaxPublic.getProductTicker= jest.fn(() => {
-            return Promise.resolve({  bid: currentValue })
+            return Promise.resolve({  ask: currentValue })
         });
 
         config.amount=5
@@ -56,7 +56,7 @@ describe('when buying coin 2',()=>{
         gdaxAuthenticated.buy=jest.fn();  
 
         gdaxPublic.getProductTicker= jest.fn(() => {
-            return Promise.resolve({  bid: currentValue });
+            return Promise.resolve({  ask: currentValue });
         });
 
         config.amount=5000
