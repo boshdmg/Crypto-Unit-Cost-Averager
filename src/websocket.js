@@ -1,5 +1,4 @@
 var gdax = require('gdax');
-var orderBookSync = new gdax.OrderbookSync();
 var webSocket = new gdax.WebsocketClient('ETH-EUR');
 var orderbook = new gdax.OrderbookSync();
 

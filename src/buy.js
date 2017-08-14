@@ -15,7 +15,10 @@ export default function()
             'type':'limit',
             'price': currentPrice,
             'size': size,
-            'product_id': config.product
+            'product_id': config.product,
+            'post_only': true,
+            'cancel_after' :'hour'
+
         };
 
         gdaxAuthenticated.buy(transaction,function(err, response, data){

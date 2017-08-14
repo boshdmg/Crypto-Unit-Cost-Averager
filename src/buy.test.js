@@ -20,7 +20,9 @@ describe('when buying coins',()=>{
         'type':'limit',
         'price': currentValue,
         'size': '0.0250',
-        'product_id': 'test-test'
+        'product_id': 'test-test',
+        'post_only': true,
+        'cancel_after' :'hour'
     }
 
     beforeEach(()=>{        
@@ -49,7 +51,9 @@ describe('when buying coin 2',()=>{
         'type':'limit',
         'price': currentValue,
         'size': '25.0000',
-        'product_id': 'test-test'
+        'product_id': 'test-test',
+        'post_only': true,
+        'cancel_after' :'hour'
     }
 
     beforeEach(()=>{        
