@@ -7,7 +7,7 @@ export default function()
     gdaxPublic.getProductTicker()
     .then(data=>{
         
-        let currentPrice =data.ask
+        let currentPrice =data.bid
 
         let size = Number(config.amount/currentPrice).toFixed(4).toString();
 
@@ -16,13 +16,12 @@ export default function()
             'price': currentPrice,
             'size': size,
             'product_id': config.product,
-            'post_only': true,
             'cancel_after' :'hour'
-
         };
 
         gdaxAuthenticated.buy(transaction,function(err, response, data){
             console.log(`BUY ${size} of ${config.product} for ${config.amount} @ ${currentPrice} @ ${new Date().toLocaleString()}`);
+            //console.log(err,data);
         });
         //priceHistory.push(parseFloat(currentPrice)) 
         //store.put('price.history',priceHistory)

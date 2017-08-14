@@ -21,7 +21,6 @@ describe('when buying coins',()=>{
         'price': currentValue,
         'size': '0.0250',
         'product_id': 'test-test',
-        'post_only': true,
         'cancel_after' :'hour'
     }
 
@@ -29,7 +28,7 @@ describe('when buying coins',()=>{
         gdaxAuthenticated.buy=jest.fn();  
 
         gdaxPublic.getProductTicker= jest.fn(() => {
-            return Promise.resolve({  ask: currentValue })
+            return Promise.resolve({  bid: currentValue })
         });
 
         config.amount=5
@@ -52,7 +51,6 @@ describe('when buying coin 2',()=>{
         'price': currentValue,
         'size': '25.0000',
         'product_id': 'test-test',
-        'post_only': true,
         'cancel_after' :'hour'
     }
 
@@ -60,7 +58,7 @@ describe('when buying coin 2',()=>{
         gdaxAuthenticated.buy=jest.fn();  
 
         gdaxPublic.getProductTicker= jest.fn(() => {
-            return Promise.resolve({  ask: currentValue });
+            return Promise.resolve({  bid: currentValue });
         });
 
         config.amount=5000
