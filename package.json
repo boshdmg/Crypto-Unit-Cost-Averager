@@ -6,8 +6,7 @@
   "scripts": {
     "test": "jest --colors --verbose --silent=false",
     "test-watch": "jest --colors --verbose --watch --silent=false",
-    "start": "babel-node  --presets es2015 ./src/index.js",
-    "start-test": "babel-node  --presets es2015 ./src/websocket.js"
+    "start": "babel-node  --presets es2015 ./src/index.js"
   },
   "author": "D Garnys",
   "license": "ISC",
