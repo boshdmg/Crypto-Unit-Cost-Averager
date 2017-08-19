@@ -7,7 +7,7 @@ Written to run on Node.
 
 `npm run start`
 
-Create a gdaxrc. in this shape:
+Create a gdaxrc. file in root of project in this shape:
 ~~~json
 {
     "url" : "https://api.gdax.com",
@@ -19,6 +19,8 @@ Create a gdaxrc. in this shape:
     "interval" : "1" 
 }
 ~~~
+This will buy 10 Euros worth of Ethereum ever hour.
+
 You can generate an api key,secret and passphrase under your gdax [account](https://www.gdax.com/settings/api).
 amount => is the amount you want to spend.
 interval => is the intervals in hours you want to buy.
