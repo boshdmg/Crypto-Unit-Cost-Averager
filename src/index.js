@@ -1,10 +1,7 @@
 import buy from './buy';
+import balanceChecker from './balanceChecker';
 import config from './config';
 import fs from 'fs';
-
-// let store = new Storage('store.json');
-// store.put('price.history',[])
-// store.put('buy.history',[])
 
 let app =()=>{
 
@@ -16,7 +13,18 @@ let app =()=>{
         return; 
     }
     
-   buy();
+    balanceChecker().then((data)=>
+    {
+        if(data)
+        {
+            buy();
+        }
+        else
+        {
+            console.log('You dont have enough credit :(')
+        }
+    })
+ 
 }
 
 setInterval(()=>{app()},1000 * 60 * 60 * config.interval)

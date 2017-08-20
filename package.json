@@ -13,7 +13,9 @@
   "dependencies": {
     "fs": "0.0.1-security",
     "gdax": "github:coinbase/gdax-node",
-    "rc": "^1.2.1"
+    "rc": "^1.2.1",
+    "regression": "^2.0.0",
+    "simple-statistics": "^4.1.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
