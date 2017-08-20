@@ -2,7 +2,7 @@ import {gdaxAuthenticated} from './exchangeClients';
 import {gdaxPublic} from './exchangeClients';
 import config from './config';
 
-export default function()
+export default () =>
 {    
     gdaxPublic.getProductTicker()
     .then(data=>{
@@ -19,9 +19,8 @@ export default function()
             'cancel_after' :'hour'
         };
 
-        gdaxAuthenticated.buy(transaction,function(err, response, data){
+        gdaxAuthenticated.buy(transaction,()=>{
             console.log(`BUY ${size} of ${config.product} for ${config.amount} @ ${currentPrice} @ ${new Date().toLocaleString()}`);
-            //console.log(err,data);
         });
         //priceHistory.push(parseFloat(currentPrice)) 
         //store.put('price.history',priceHistory)
