@@ -4,7 +4,8 @@ import transfer from './transfer'
 
 jest.mock('./config');
 
-describe('when withdrawing ETH',()=>{
+//gdax dont support crypto withdrawl yet
+xdescribe('when withdrawing ETH',()=>{
 
     config.ETHWalletAddress = 'yoyo';
 
