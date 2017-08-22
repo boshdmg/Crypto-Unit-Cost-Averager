@@ -1,5 +1,5 @@
-import {gdaxAuthenticated} from './exchangeClients'
-import config from './config'
+// import {gdaxAuthenticated} from './exchangeClients'
+// import config from './config'
 
 export default function()
 {

@@ -23,7 +23,11 @@
     "no-unused-vars": "error",
     "prefer-destructuring": "error",
     "prefer-arrow-callback": ["error", { "allowNamedFunctions": true }],
-    "valid-typeof": "error"
+    "valid-typeof": "error",
+    "no-console": "off",
+    "no-multiple-empty-lines" : "error",
+    "semi": [2,"never"],
+    "indent": ["error", 4]
   },
   "plugins": [
     "jest"

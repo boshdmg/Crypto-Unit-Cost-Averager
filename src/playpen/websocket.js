@@ -5,11 +5,6 @@ import {gdaxAuthenticated} from './exchangeClients';
 import {gdaxPublic} from './exchangeClients';
 
 
-
-// let store = new Storage('store.json');
-// store.put('price.history',[])
-// store.put('buy.history',[])
-
 let app =()=>{
 
     try{

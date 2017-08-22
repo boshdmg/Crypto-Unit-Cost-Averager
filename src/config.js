@@ -1,4 +1,4 @@
-import rc from 'rc';
+import rc from 'rc'
 
  export default  rc('gdax',{
         passphrase: '',
@@ -8,4 +8,4 @@ import rc from 'rc';
         product :'ETH-EUR',
         amount : '',
         interval: 1
-    });
+    })
