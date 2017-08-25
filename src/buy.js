@@ -14,7 +14,7 @@ export default (amount,product) =>
             'price': currentPrice,
             'size': size,
             'product_id': product,
-            'cancel_after' :'hour'
+            'cancel_after' :'day'
         }
 
         gdaxAuthenticated.buy(transaction,()=>{

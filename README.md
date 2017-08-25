@@ -16,7 +16,7 @@ Create a gdaxrc. file in root of project in this shape:
     "passphrase" : "",
     "buy" :[
         {"product":"ETH-EUR","amount" : "10","interval" : "1"},
-        {"product":"LTC-USD","amount" : "10","interval" : "24"},
+        {"product":"LTC-USD","amount" : "10","interval" : "24"}
     ]
 }
 ~~~

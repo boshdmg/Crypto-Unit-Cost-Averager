@@ -17,7 +17,7 @@ describe('when buying coins',()=>{
         'price': currentValue,
         'size': '0.0250',
         'product_id': 'test-test',
-        'cancel_after' :'hour'
+        'cancel_after' :'day'
     }
     beforeEach(()=>{ 
          
@@ -46,7 +46,7 @@ describe('when buying coin 2',()=>{
         'price': currentValue,
         'size': '25.0000',
         'product_id': 'test-test',
-        'cancel_after' :'hour'
+        'cancel_after' :'day'
     }
 
     beforeEach(()=>{        
