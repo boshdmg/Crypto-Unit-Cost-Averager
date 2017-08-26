@@ -39,7 +39,7 @@ describe('when buying coins',()=>{
 
 describe('when buying coin 2',()=>{
  
-     let currentValue =200
+    let currentValue =200
 
     let expectedTransaction = {
         'type':'limit',

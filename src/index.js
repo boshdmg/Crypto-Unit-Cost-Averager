@@ -3,7 +3,6 @@ import balanceChecker from './balanceChecker'
 import config from './config'
 import fs from 'fs'
 
-
 try{
     fs.statSync('.gdaxrc')
 }
@@ -15,7 +14,7 @@ let app =(amount,product,interval)=>{
 
     setInterval(()=>{
         balanceChecker(amount,product).then((data)=>
-        {
+        {   
             if(data){
                 buy(amount,product)
             }
