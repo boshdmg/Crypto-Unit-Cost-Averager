@@ -1,6 +1,6 @@
 import {gdaxAuthenticated} from './exchangeClients'
 import config from './config'
-import {withdrawETH,withdrawLTC} from './transfer'
+import {withdrawETH,withdrawLTC,withdrawBTC} from './transfer'
 
 jest.mock('./config')
 jest.mock('./exchangeClients')
@@ -64,6 +64,37 @@ describe('when withdrawing LTC to a invalid address',()=>{
     })
         
     it('should not withdraw the LTC',()=>{
+        expect(gdaxAuthenticated.withdrawCrypto).not.toHaveBeenCalled()
+    })
+})
+
+describe('when withdrawing BTC to a valid address',()=>{
+    let withdrawJson ={
+        "amount": 0.01,
+        "currency": "BTC",
+        "crypto_address": "1Ap5ssvYXde3kkykhetB2yr8g35EbcRxd3"
+    }
+
+    beforeAll(()=>{
+        config.BTCWalletAddress = '1Ap5ssvYXde3kkykhetB2yr8g35EbcRxd3'
+        gdaxAuthenticated.withdrawCrypto = jest.fn()
+        withdrawBTC()
+    })
+
+    it('should withdraw the BTC',()=>{
+        expect(gdaxAuthenticated.withdrawCrypto).toHaveBeenCalledWith(withdrawJson,expect.any(Function))
+    })
+})
+    
+describe('when withdrawing BTC to a invalid address',()=>{
+
+    beforeAll(()=>{
+        config.BTCWalletAddress = '0xfd867d45eac2e0fa598db4a7b3e77eeb29f4e7a4'
+        gdaxAuthenticated.withdrawCrypto = jest.fn()
+        withdrawBTC()
+    })
+
+    it('should not withdraw the BTC',()=>{
         expect(gdaxAuthenticated.withdrawCrypto).not.toHaveBeenCalled()
     })
 })

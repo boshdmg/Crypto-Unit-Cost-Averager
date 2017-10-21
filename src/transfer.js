@@ -36,3 +36,21 @@ export function withdrawLTC()
         })
     }
 }
+
+export function withdrawBTC()
+{
+    if(/^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$/.test(config.BTCWalletAddress))
+    { 
+        gdaxAuthenticated.withdrawCrypto({
+            "amount": 0.01,
+            "currency": "BTC",
+            "crypto_address": config.BTCWalletAddress
+        },
+        (err)=>{
+            if(err)
+            {
+                console.log(err)
+            }
+        })
+    }
+}

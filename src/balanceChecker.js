@@ -10,3 +10,4 @@ export default (amount,product) =>
         }).catch((x)=>{console.log(x)})
     })  
 }
+
