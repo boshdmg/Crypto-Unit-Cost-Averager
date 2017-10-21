@@ -1,12 +1,19 @@
 import {gdaxAuthenticated} from './exchangeClients'
 import {gdaxPublic} from './exchangeClients'
 
-export default (amount,product) =>
+export default (amount,product,limit) =>
 {    
+
     gdaxPublic(product).getProductTicker().then(data=>{
         
         let currentPrice =data.bid
 
+        if(limit !== undefined && currentPrice>limit)
+        {
+            console.log(`Current price above limit of ${limit}`)
+            return false
+        }
+            
         let size = Number(amount/currentPrice).toFixed(4).toString()
 
         let transaction = {

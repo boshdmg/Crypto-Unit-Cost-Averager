@@ -7,7 +7,7 @@
     "test": "jest --colors --verbose --silent=false",
     "test-watch": "jest --colors --verbose --watch --silent=false",
     "start": "babel-node  --presets es2015 ./src/index.js",
-    "start2": "babel-node  --presets es2015 ./src/playpen/webni[socket.js",
+    "start2": "babel-node  --presets es2015 ./src/playpen/websocket.js",
     "withdraw" : "babel-node  --presets es2015 ./src/withdraw.js",
     "precommit": "lint-staged",
     "lint": "eslint src/*.js"
