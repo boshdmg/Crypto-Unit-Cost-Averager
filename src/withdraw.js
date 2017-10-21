@@ -1,3 +1,3 @@
-import {withdrawETH,withdrawLTC} from './transfer'
+//import {withdrawETH,withdrawLTC} from './transfer'
 
 //withdrawETH()

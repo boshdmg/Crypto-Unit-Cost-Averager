@@ -15,12 +15,12 @@ Create a gdaxrc. file in root of project in this shape:
     "secret" : "",
     "passphrase" : "",
     "buy" :[
-        {"product":"ETH-EUR","amount" : "10","interval" : "1"},
+        {"product":"ETH-EUR","amount" : "10","interval" : "1" ,"limit":240},
         {"product":"LTC-USD","amount" : "10","interval" : "24"}
     ]
 }
 ~~~
-This will buy 10 Euros worth of Ethereum ever hour, and 10 Dollars of LiteCoin every 24 hours.
+This will buy 10 Euros worth of Ethereum ever hour unless the price exceeds 240 EUR, and 10 Dollars of LiteCoin every 24 hours.
 
 You can generate an api key,secret and passphrase under your gdax [account](https://www.gdax.com/settings/api).
 amount => is the amount you want to spend.
