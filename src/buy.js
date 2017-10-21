@@ -10,6 +10,7 @@ export default (amount,product,limit) =>
 
         if(limit !== undefined && currentPrice>limit)
         {
+            console.log(`Current price above limit of ${limit}`)
             return false
         }
             

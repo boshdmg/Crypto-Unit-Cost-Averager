@@ -4,16 +4,16 @@ import balanceChecker from './balanceChecker'
 export default (buys) =>{
     for (let x in buys){
         let buy = buys[x]
-        _app(buy.amount,buy.product,buy.interval)
+        _app(buy.amount,buy.product,buy.interval,buy.limit)
     }
 }
 
-let _app =(amount,product,interval)=>{
+let _app =(amount,product,interval,limit)=>{
     setInterval(()=>{
         balanceChecker(amount,product).then((data)=>
         {   
             if(data){
-                buy(amount,product)
+                buy(amount,product,limit)
             }
             else{
                 console.log('You dont have enough credit :(')
