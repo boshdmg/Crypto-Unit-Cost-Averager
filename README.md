@@ -11,9 +11,9 @@ Create a gdaxrc. file in root of project in this shape:
 ~~~json
 {
     "url" : "https://api.gdax.com",
-    "key" : "",
-    "secret" : "",
-    "passphrase" : "",
+    "key" : "api-key-from-gdax",
+    "secret" : "api-secret-from-dgax",
+    "passphrase" : "api-passphrase-from-gdax",
     "buy" :[
         {"product":"ETH-EUR","amount" : "10","interval" : "1" ,"limit":240},
         {"product":"LTC-USD","amount" : "10","interval" : "24"}
