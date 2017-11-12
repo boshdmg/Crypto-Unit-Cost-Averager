@@ -6,12 +6,7 @@ export default (product,interval) =>{
             const mostRecentTransaction = data.filter(transaction => transaction.settled===true)[0]
 
             let time = new Date(mostRecentTransaction.created_at)
-            time.setHours(time.getHours() + interval)
-
-            console.log(time)
-            console.log(new Date())
-
-
+            time.setHours(+time.getHours() + +interval)
             resolve( new Date() > time)
         })
     }) 

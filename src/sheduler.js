@@ -1,5 +1,6 @@
-import buy from './buy'
+import buyCurrency from './buy'
 import balanceChecker from './balanceChecker'
+import withinBuyInterval from './fills'
 
 export default (buys) =>{
     for (let x in buys){
@@ -9,16 +10,33 @@ export default (buys) =>{
 }
 
 let _app =(amount,product,interval,limit)=>{
-    setInterval(()=>{
-        balanceChecker(amount,product).then((data)=>
-        {   
-            if(data){
-                buy(amount,product,limit)
+    
+    let func = () =>{
+
+        withinBuyInterval(product,interval).then((shouldBuy)=>{
+            return shouldBuy
+        }).then((shouldBuy)=>
+        {
+            if(shouldBuy)
+            {
+                return balanceChecker(amount,product).then((data)=>
+                {  
+                    return data   
+                })
+            }
+            return false
+
+        }).then((hasCredit)=>{
+            
+            if(hasCredit){
+                buyCurrency(amount,product,limit)
             }
             else{
-                console.log('You dont have enough credit :(')
+                console.log(`You dont have enough credit for ${product} purchase'`)
             }
+        })
+    } 
     
-        })}
-        ,1000 * 60 * 60 * interval)
+    func()
+    setInterval(func,1000 * 60 * 60 * interval)
 }

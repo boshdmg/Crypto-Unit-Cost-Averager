@@ -1,18 +1,11 @@
 import {gdaxAuthenticated,gdaxPublic} from './exchangeClients'
 import buy from './buy'
 
-jest.mock('./exchangeClients',()=>{
-    return {
-        gdaxAuthenticated:jest.fn(),
-        gdaxPublic:jest.fn()
-    }
-})
+jest.mock('./exchangeClients')
 
 describe('when buying coins',()=>{
 
     let currentValue =200
-
-    gdaxAuthenticated.buy=jest.fn()
 
     gdaxPublic.mockImplementation(()=>{
         return { getProductTicker:jest.fn(() => {
@@ -31,7 +24,8 @@ describe('when buying coins',()=>{
             'price': currentValue,
             'size': '0.0250',
             'product_id': 'test-test',
-            'cancel_after' :'day'
+            'cancel_after' :'day', 
+            'post_only' : true
         }
 
         beforeAll(()=>{ 
@@ -50,7 +44,8 @@ describe('when buying coins',()=>{
             'price': currentValue,
             'size': '25.0000',
             'product_id': 'test-test',
-            'cancel_after' :'day'
+            'cancel_after' :'day',
+            'post_only' : true
         }
 
         beforeAll(()=>{        

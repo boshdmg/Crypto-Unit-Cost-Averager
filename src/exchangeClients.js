@@ -5,8 +5,12 @@ const gdaxAuthenticated = new gdax.AuthenticatedClient(config.key, config.secret
 const gdaxPublic = (product)=>{
     return new gdax.PublicClient(product)
 }
+const gdaxSocket = (product) =>{
+    return new gdax.WebsocketClient(product)
+}
 
 export {
     gdaxAuthenticated,
-    gdaxPublic
+    gdaxPublic,
+    gdaxSocket
 } 

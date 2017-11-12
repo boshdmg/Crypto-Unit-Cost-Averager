@@ -9,4 +9,11 @@ catch(ex){
     throw('.gdaxrc file not found - please create it')  
 }
 
-sheduler(config.buy)
+
+console.log("=======================================================================================")
+console.log("The app will begin to purchase (in 10 secs) based on the rules you put into the .gdaxrc")
+console.log("=======================================================================================")
+console.log(config.buy)
+console.log("=======================================================================================")
+
+setTimeout(()=>{sheduler(config.buy)},10000)

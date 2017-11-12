@@ -10,7 +10,7 @@ export default (amount,product,limit) =>
 
         if(limit !== undefined && currentPrice>limit)
         {
-            console.log(`Current price above limit of ${limit}`)
+            console.log(`Current price above limit of ${limit} for ${product}`)
             return false
         }
             
@@ -21,7 +21,8 @@ export default (amount,product,limit) =>
             'price': currentPrice,
             'size': size,
             'product_id': product,
-            'cancel_after' :'day'
+            'cancel_after' :'day',
+            'post_only' :true
         }
 
         gdaxAuthenticated.buy(transaction,()=>{
