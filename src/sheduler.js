@@ -1,6 +1,6 @@
 import buyCurrency from './buy'
 import balanceChecker from './balanceChecker'
-import withinBuyInterval from './fills'
+import withinBuyInterval from './orders'
 
 export default (buys) =>{
     for (let x in buys){

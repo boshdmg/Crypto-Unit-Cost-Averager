@@ -1,9 +1,9 @@
 import sheduler from './sheduler'
 import buy from './buy'
-import withinBuyInterval from './fills'
+import withinBuyInterval from './orders'
 
 jest.mock('./buy')
-jest.mock('./fills')
+jest.mock('./orders')
 
 jest.mock('./balanceChecker',()=> jest.fn(()=>{return Promise.resolve(true)}))
 

@@ -1,5 +1,5 @@
 import {gdaxAuthenticated} from './exchangeClients'
-import boughtWithinTime from './fills'
+import boughtWithinTime from './orders'
 import MockDate from 'mockdate'
 
 jest.mock('./exchangeClients')
