@@ -1,6 +1,6 @@
 # Crypto-Unit-Cost-Averager
 
-Automatically buy an amount of cryptocurreny (Ethereum/Litecoin/Bitcoin) at regular intervals, to support [unit cost averaging](https://en.wikipedia.org/wiki/Dollar_cost_averaging) investment stratergy.
+Automatically buy an amount of cryptocurreny (Ether/Litecoin/Bitcoin) at regular intervals, to support [unit cost averaging](https://en.wikipedia.org/wiki/Dollar_cost_averaging) investment stratergy.
 
 
 Written to run on Node.
@@ -12,7 +12,7 @@ Create a gdaxrc. file in root of project in this shape:
 {
     "url" : "https://api.gdax.com",
     "key" : "api-key-from-gdax",
-    "secret" : "api-secret-from-dgax",
+    "secret" : "api-secret-from-gdax",
     "passphrase" : "api-passphrase-from-gdax",
     "buy" :[
         {"product":"ETH-EUR","amount" : "10","interval" : "1" , "limit":240},
@@ -29,4 +29,8 @@ amount => is the amount you want to spend.
 interval => is the intervals in hours you want to buy.
 limit => is the maximum price you are willing to buy at.
 
+
+Up coming features
+- Purchasing coins as soon as they drop below the limit - using websock api
+- Transfering coins to nominated wallet 
 
