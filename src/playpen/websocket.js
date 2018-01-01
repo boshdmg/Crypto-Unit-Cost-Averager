@@ -19,7 +19,10 @@
 
 import {gdaxAuthenticated} from './../exchangeClients'
 
-gdaxAuthenticated.getFills({'product_id': 'ETH-EUR'},(x,y,data)=>{
+gdaxAuthenticated.getOrders({'product_id': 'LTC-EUR','status':'done','done_reason':'filled','side':'buy'},(x,y,data)=>{
    
-    console.log(data.filter(transaction => transaction.settled===true)[0])
+    console.log(data)
+    console.log(data.length)
 })
+
+//status=done

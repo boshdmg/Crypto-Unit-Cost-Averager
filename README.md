@@ -26,11 +26,11 @@ For BTC trades there is currently a minimum purchase of 0.01 coins imposed by gd
 
 You can generate an api key,secret and passphrase under your gdax [account](https://www.gdax.com/settings/api).
 amount => is the amount you want to spend.
-interval => is the intervals in hours you want to buy.
+interval => is the intervals in hours you want to buy (whole numbers only)
 limit => is the maximum price you are willing to buy at.
 
 
 Up coming features
 - Purchasing coins as soon as they drop below the limit - using websock api
-- Transfering coins to nominated wallet 
+- Transfering coins to nominated wallet (transfer.js)
 
