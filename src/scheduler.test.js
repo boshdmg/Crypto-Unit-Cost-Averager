@@ -1,6 +1,7 @@
-import sheduler from './sheduler'
+import scheduler from './scheduler'
 import buy from './buy'
 import withinBuyInterval from './orders'
+import * as constants from './constants'
 
 jest.mock('./buy')
 jest.mock('./orders')
@@ -22,14 +23,14 @@ describe('when buying multiple currencies and all of them have been purchased al
             return Promise.resolve(false)
         })
     
-        sheduler(config)
+        scheduler(config)
 
     })
 
     it('should shedule to buy them all at the next interval',()=>{
-        expect(setInterval).toHaveBeenCalledWith(expect.any(Function),1000 * 60 * 60 * 1)
-        expect(setInterval).toHaveBeenCalledWith(expect.any(Function),1000 * 60 * 60 * 6)
-        expect(setInterval).toHaveBeenCalledWith(expect.any(Function),1000 * 60 * 60 * 96)
+        expect(setInterval).toHaveBeenCalledWith(expect.any(Function),constants.ONE_HOUR * 1 + constants.ORDER_CREATION_INTERVAL)
+        expect(setInterval).toHaveBeenCalledWith(expect.any(Function),constants.ONE_HOUR * 6 + constants.ORDER_CREATION_INTERVAL)
+        expect(setInterval).toHaveBeenCalledWith(expect.any(Function),constants.ONE_HOUR * 96 + constants.ORDER_CREATION_INTERVAL)
 
         expect(buy).not.toHaveBeenCalledWith("7","ETH-EUR","200")  
         expect(buy).not.toHaveBeenCalledWith("7.5","LTC-EUR",undefined)
@@ -54,13 +55,13 @@ describe('when buying multiple currencies and one of them have been purchased al
             return Promise.resolve(false)
         })
         
-        sheduler(config)
+        scheduler(config)
     })
 
     it('should buy shedule all of them but attempted to buy the one straight away',()=>{
-        expect(setInterval).toHaveBeenCalledWith(expect.any(Function),1000 * 60 * 60 * 1)
-        expect(setInterval).toHaveBeenCalledWith(expect.any(Function),1000 * 60 * 60 * 6)
-        expect(setInterval).toHaveBeenCalledWith(expect.any(Function),1000 * 60 * 60 * 96)
+        expect(setInterval).toHaveBeenCalledWith(expect.any(Function),constants.ONE_HOUR * 1 + constants.ORDER_CREATION_INTERVAL)
+        expect(setInterval).toHaveBeenCalledWith(expect.any(Function),constants.ONE_HOUR * 6 + constants.ORDER_CREATION_INTERVAL)
+        expect(setInterval).toHaveBeenCalledWith(expect.any(Function),constants.ONE_HOUR * 96 + constants.ORDER_CREATION_INTERVAL)
 
         expect(buy).toHaveBeenCalledWith("7.5","LTC-EUR",undefined)
         expect(buy).not.toHaveBeenCalledWith("7","ETH-EUR","200")  
