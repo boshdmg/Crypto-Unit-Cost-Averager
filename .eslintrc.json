@@ -21,7 +21,7 @@
     "no-undef": "error",
     "no-unreachable": "error",
     "no-unused-vars": "error",
-    "prefer-destructuring": "error",
+    "prefer-destructuring": "warn",
     "prefer-arrow-callback": ["error", { "allowNamedFunctions": true }],
     "valid-typeof": "error",
     "no-console": "off",

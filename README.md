@@ -10,10 +10,10 @@ Written to run on Node.
 Create a gdaxrc. file in root of project in this shape:
 ~~~json
 {
-    "url" : "https://api.gdax.com",
-    "key" : "api-key-from-gdax",
-    "secret" : "api-secret-from-gdax",
-    "passphrase" : "api-passphrase-from-gdax",
+    "url" : "https://api.pro.coinbase.com",
+    "key" : "api-key-from-coinbase-pro",
+    "secret" : "api-secret-from-coinbase-pro",
+    "passphrase" : "api-passphrase-from-coinbase-pro",
     "buy" :[
         {"product":"ETH-EUR","amount" : "10","interval" : "1" , "limit":240},
         {"product":"LTC-USD","amount" : "10","interval" : "24", "limit": 40}

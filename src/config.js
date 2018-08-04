@@ -4,7 +4,7 @@ export default  rc('gdax',{
     passphrase: '',
     key: '',
     secret: '',
-    url: 'https://api.gdax.com',
+    url: 'https://api.pro.coinbase.com',
     product :'ETH-EUR',
     amount : '',
     interval: 1
