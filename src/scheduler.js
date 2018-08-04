@@ -1,6 +1,7 @@
 import buyCurrency from './buy'
 import balanceChecker from './balanceChecker'
 import withinBuyInterval from './orders'
+import * as constants from './constants'
 
 export default (buys) =>{
     for (let x in buys){
@@ -39,5 +40,6 @@ let _app =(amount,product,interval,limit)=>{
     } 
     
     func()
-    setInterval(func,1000 * 60 * 60 * interval)
+
+    setInterval(func, (constants.ONE_HOUR * interval) + constants.ORDER_CREATION_INTERVAL)
 }

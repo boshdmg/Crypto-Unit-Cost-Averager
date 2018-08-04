@@ -1,4 +1,4 @@
-import sheduler from './sheduler'
+import scheduler from './scheduler'
 import config from './config'
 import fs from 'fs'
 
@@ -16,4 +16,4 @@ console.log("===================================================================
 console.log(config.buy)
 console.log("=======================================================================================")
 
-setTimeout(()=>{sheduler(config.buy)},10000)
+setTimeout(()=>{scheduler(config.buy)},10000)
