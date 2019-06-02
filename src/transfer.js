@@ -1,11 +1,11 @@
-import {gdaxAuthenticated} from './exchangeClients'
+import {cbProAuthenticated} from './exchangeClients'
 import config from './config'
 
 export function withdrawETH()
 {
     if(/^(0x)?[0-9a-f]{40}$/.test(config.ETHWalletAddress))
     {
-        gdaxAuthenticated.withdrawCrypto({
+        cbProAuthenticated.withdrawCrypto({
             "amount": 0.01,
             "currency": "ETH",
             "crypto_address": config.ETHWalletAddress
@@ -23,7 +23,7 @@ export function withdrawLTC()
 {
     if(/^L[a-zA-Z0-9]{26,33}$/.test(config.LTCWalletAddress))
     {
-        gdaxAuthenticated.withdrawCrypto({
+        cbProAuthenticated.withdrawCrypto({
             "amount": 0.01,
             "currency": "LTC",
             "crypto_address": config.LTCWalletAddress
@@ -41,7 +41,7 @@ export function withdrawBTC()
 {
     if(/^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$/.test(config.BTCWalletAddress))
     { 
-        gdaxAuthenticated.withdrawCrypto({
+        cbProAuthenticated.withdrawCrypto({
             "amount": 0.01,
             "currency": "BTC",
             "crypto_address": config.BTCWalletAddress

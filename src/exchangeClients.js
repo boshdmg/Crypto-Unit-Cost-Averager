@@ -1,16 +1,16 @@
 import config from './config'
-import gdax from 'gdax'
+import coinbase from 'coinbase-pro'
 
-const gdaxAuthenticated = new gdax.AuthenticatedClient(config.key, config.secret, config.passphrase, config.url)
-const gdaxPublic = (product)=>{
-    return new gdax.PublicClient(product)
+const cbProAuthenticated = new coinbase.AuthenticatedClient(config.key, config.secret, config.passphrase, config.url)
+const cbProPublic = ()=>{
+    return new coinbase.PublicClient()
 }
-const gdaxSocket = (product) =>{
-    return new gdax.WebsocketClient(product)
+const cbProSocket = () =>{
+    return new coinbase.WebsocketClient()
 }
 
 export {
-    gdaxAuthenticated,
-    gdaxPublic,
-    gdaxSocket
+    cbProAuthenticated,
+    cbProPublic,
+    cbProSocket
 } 

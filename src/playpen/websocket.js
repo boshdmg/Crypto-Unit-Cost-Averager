@@ -17,9 +17,9 @@
 // })
 
 
-import {gdaxAuthenticated} from './../exchangeClients'
+import {cbProAuthenticated} from './../exchangeClients'
 
-gdaxAuthenticated.getOrders({'product_id': 'LTC-EUR','status':'done','done_reason':'filled','side':'buy'},(x,y,data)=>{
+cbProAuthenticated.getOrders({'product_id': 'LTC-EUR','status':'done','done_reason':'filled','side':'buy'},(x,y,data)=>{
    
     console.log(data)
     console.log(data.length)

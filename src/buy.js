@@ -1,10 +1,10 @@
-import {gdaxAuthenticated} from './exchangeClients'
-import {gdaxPublic} from './exchangeClients'
+import {cbProAuthenticated} from './exchangeClients'
+import {cbProPublic} from './exchangeClients'
 
 export default (amount,product,limit) =>
 {    
 
-    gdaxPublic(product).getProductTicker().then(data=>{
+    cbProPublic().getProductTicker(product).then(data=>{
         
         let currentPrice =data.bid
 
@@ -25,8 +25,10 @@ export default (amount,product,limit) =>
             'post_only' :true
         }
 
-        gdaxAuthenticated.buy(transaction,()=>{
+        cbProAuthenticated.buy(transaction).then(()=>{
             console.log(`BUY ${size} of ${product} for ${amount} @ ${currentPrice} @ ${new Date().toLocaleString()}`)
+        }).catch((msg)=>{
+            console.log(JSON.parse(msg.response.body).message)
         })
     })
 }
