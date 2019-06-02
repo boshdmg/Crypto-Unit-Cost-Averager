@@ -1,4 +1,4 @@
-import {gdaxAuthenticated} from './exchangeClients'
+import {cbProAuthenticated} from './exchangeClients'
 import boughtWithinTime from './orders'
 import MockDate from 'mockdate'
 
@@ -6,7 +6,7 @@ jest.mock('./exchangeClients')
 
 describe('when checking if the last order was within the buy interval',()=>{
 
-    gdaxAuthenticated.getOrders.mockImplementation(()=>{
+    cbProAuthenticated.getOrders.mockImplementation(()=>{
         return Promise.resolve([
             {
                 settled:true,
@@ -26,7 +26,7 @@ describe('when checking if the last order was within the buy interval',()=>{
     it('should get all filled buy orders ',()=>{
         expect.assertions(1)
         return boughtWithinTime('EUR-LTC',1).then(() => {
-            expect(gdaxAuthenticated.getOrders).toHaveBeenCalledWith({'product_id': 'EUR-LTC','status':'done','done_reason':'filled','side':'buy'})
+            expect(cbProAuthenticated.getOrders).toHaveBeenCalledWith({'product_id': 'EUR-LTC','status':'done','done_reason':'filled','side':'buy'})
         })
     })
 

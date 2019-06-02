@@ -1,6 +1,6 @@
 # Crypto-Unit-Cost-Averager
 
-Automatically buy an amount of cryptocurreny (Ether/Litecoin/Bitcoin) at regular intervals, to support [unit cost averaging](https://en.wikipedia.org/wiki/Dollar_cost_averaging) investment stratergy.
+Automatically buy an amount of cryptocurreny at regular intervals on Coinbase Pro, to support [unit cost averaging](https://en.wikipedia.org/wiki/Dollar_cost_averaging) investment stratergy.
 
 
 Written to run on Node.
@@ -24,13 +24,13 @@ This will buy 10 Euros worth of Ethereum ever hour unless the price exceeds 240 
 
 For BTC trades there is currently a minimum purchase of 0.01 coins imposed by gdax, so if Bitcoins value is 5000, your amount value must be at least 50.
 
-You can generate an api key,secret and passphrase under your gdax [account](https://www.gdax.com/settings/api).
-amount => is the amount you want to spend.
-interval => is the intervals in hours you want to buy (whole numbers only)
-limit => is the maximum price you are willing to buy at.
+You can generate an api `key`,`secret` and `passphrase` under your Coinbase Pro [account](https://pro.coinbase.com/profile/api), you will need to grand `View` and `Trade` permission.
+`amount` => is the amount you want to spend.
+`interval` => is the intervals in hours you want to buy (whole numbers only)
+`limit` => is the maximum price you are willing to buy at.
 
 
 Up coming features
 - Purchasing coins as soon as they drop below the limit - using websock api
-- Transfering coins to nominated wallet (transfer.js)
+-- Transfering coins to nominated wallet (transfer.js)
 

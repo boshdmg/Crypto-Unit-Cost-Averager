@@ -1,16 +1,16 @@
-import {gdaxAuthenticated} from './exchangeClients'
+import {cbProAuthenticated} from './exchangeClients'
 import balanceChecker from './balanceChecker'
 
 jest.mock('./exchangeClients',()=>{
     return {
-        gdaxAuthenticated:jest.fn()
+        cbProAuthenticated:jest.fn()
     }
 })
 
 describe('when balance is more than purchasing amount',()=>{
 
     beforeAll(()=>{
-        gdaxAuthenticated.getAccounts = jest.fn(()=>{
+        cbProAuthenticated.getAccounts = jest.fn(()=>{
             return Promise.resolve([{currency:'FFF', balance:'2232.1291876466595000'}])
         })
     })
@@ -27,7 +27,7 @@ describe('when balance is more than purchasing amount',()=>{
 describe('when balance is less than purchasing amount',()=>{
 
     beforeAll(()=>{
-        gdaxAuthenticated.getAccounts = jest.fn(()=>{
+        cbProAuthenticated.getAccounts = jest.fn(()=>{
             return Promise.resolve([{currency:'FFF', balance:'1'}])
         })
     })

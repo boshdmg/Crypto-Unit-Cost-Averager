@@ -1,4 +1,4 @@
-import {gdaxAuthenticated,gdaxPublic} from './exchangeClients'
+import {cbProAuthenticated,cbProPublic} from './exchangeClients'
 import buy from './buy'
 
 jest.mock('./exchangeClients')
@@ -7,14 +7,14 @@ describe('when buying coins',()=>{
 
     let currentValue =200
 
-    gdaxPublic.mockImplementation(()=>{
+    cbProPublic.mockImplementation(()=>{
         return { getProductTicker:jest.fn(() => {
             return Promise.resolve({  bid: currentValue })
         })}
     })
    
     afterEach(()=>{
-        gdaxAuthenticated.buy.mockClear()
+        cbProAuthenticated.buy.mockClear()
     })
 
     describe('when buying coins',()=>{
@@ -33,7 +33,7 @@ describe('when buying coins',()=>{
         })
         
         it('should buy the coins at the current rate',()=>{
-            expect(gdaxAuthenticated.buy).toHaveBeenCalledWith(expectedTransaction,expect.any(Function))
+            expect(cbProAuthenticated.buy).toHaveBeenCalledWith(expectedTransaction)
         })
     })
 
@@ -53,7 +53,7 @@ describe('when buying coins',()=>{
         })
         
         it('should buy the coins at the current rate',()=>{
-            expect(gdaxAuthenticated.buy).toHaveBeenCalledWith(expectedTransaction,expect.any(Function))
+            expect(cbProAuthenticated.buy).toHaveBeenCalledWith(expectedTransaction)
         })
     })
 
@@ -66,7 +66,7 @@ describe('when buying coins',()=>{
         })
         
         it('should should not buy any coins',()=>{
-            expect(gdaxAuthenticated.buy).not.toHaveBeenCalled()
+            expect(cbProAuthenticated.buy).not.toHaveBeenCalled()
         })
     })
 })
