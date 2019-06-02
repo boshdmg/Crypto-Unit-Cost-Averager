@@ -1,38 +1,30 @@
 {
   "name": "auto-dca-gdax",
   "version": "1.0.0",
-  "description": "Automatically Dollor Cost Average on Coinbase Pro",
+  "description": "Automatically Dollar (Or any currency) Cost Average on Coinbase Pro",
   "main": "index.js",
   "scripts": {
     "test": "jest --colors --verbose --silent=false",
     "test-watch": "jest --colors --verbose --watch --silent=false",
     "start": "babel-node  --presets es2015 ./src/index.js",
     "playpen": "babel-node  --presets es2015 ./src/playpen/websocket.js",
-    "precommit": "lint-staged",
     "lint": "eslint src/*.js"
   },
   "author": "D Garnys",
   "license": "ISC",
   "dependencies": {
+    "coinbase-pro": "^0.9.0",
     "fs": "0.0.1-security",
-    "gdax": "github:coinbase/gdax-node",
-    "rc": "^1.2.1"
+    "rc": "^1.2.8",
+    "rimraf": "^2.6.3"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-jest": "^20.0.3",
+    "babel-cli": "^6.26.0",
+    "babel-jest": "20.0.3",
     "babel-preset-es2015": "^6.24.1",
     "eslint": "5.3.0",
     "eslint-plugin-jest": "^20.0.3",
     "jest": "^20.0.4",
-    "lint-staged": "^4.0.3",
     "mockdate": "2.0.2"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "prettier --single-quote --trailing-comma es5 --write",
-      "git add"
-    ]
   }
 }
