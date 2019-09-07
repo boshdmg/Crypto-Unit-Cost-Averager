@@ -29,8 +29,5 @@ You can generate an api `key`,`secret` and `passphrase` under your Coinbase Pro 
 `interval` => is the intervals in hours you want to buy (whole numbers only)
 `limit` => is the maximum price you are willing to buy at.
 
-
 Up coming features
 - Purchasing coins as soon as they drop below the limit - using websock api
--- Transfering coins to nominated wallet (transfer.js)
-

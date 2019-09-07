@@ -13,9 +13,17 @@ export default (amount,product,limit) =>
             console.log(`Current price above limit of ${limit} for ${product}`)
             return false
         }
-            
-        let size = Number(amount/currentPrice).toFixed(4).toString()
-
+        
+        let size;
+        if(product!='EOS-EUR')
+        {
+            size = Number(amount/currentPrice).toFixed(4).toString()
+        }
+        else
+        {
+            size = Number(amount/currentPrice).toFixed(1).toString()
+        }
+    
         let transaction = {
             'type':'limit',
             'price': currentPrice,
