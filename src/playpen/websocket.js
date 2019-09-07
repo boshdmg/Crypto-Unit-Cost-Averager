@@ -18,7 +18,6 @@ cbProSocket().on('message',(data) => {
     }
 })
 
-
 // import {cbProAuthenticated} from './../exchangeClients'
 
 // cbProAuthenticated.getOrders({'product_id': 'LTC-EUR','status':'done','done_reason':'filled','side':'buy'},(x,y,data)=>{
