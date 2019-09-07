@@ -6,7 +6,7 @@ const cbProPublic = ()=>{
     return new coinbase.PublicClient()
 }
 const cbProSocket = () =>{
-    return new coinbase.WebsocketClient()
+    return new coinbase.WebsocketClient(['BTC-EUR'])
 }
 
 export {
