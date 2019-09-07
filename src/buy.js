@@ -14,8 +14,8 @@ export default (amount,product,limit) =>
             return false
         }
         
-        let size;
-        if(product!='EOS-EUR')
+        let size
+        if(product!=='EOS-EUR')
         {
             size = Number(amount/currentPrice).toFixed(4).toString()
         }

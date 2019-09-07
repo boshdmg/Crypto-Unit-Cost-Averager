@@ -8,15 +8,15 @@
     "test-watch": "jest --colors --verbose --watch --silent=false",
     "start": "babel-node  --presets es2015 ./src/index.js",
     "playpen": "babel-node  --presets es2015 ./src/playpen/websocket.js",
-    "lint": "eslint src/*.js"
+    "lint": "eslint src/*.js",
+    "clean": "rimraf node_modules"
   },
   "author": "D Garnys",
   "license": "ISC",
   "dependencies": {
     "coinbase-pro": "^0.9.0",
     "fs": "0.0.1-security",
-    "rc": "^1.2.8",
-    "rimraf": "^2.7.1"
+    "rc": "^1.2.8"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -25,6 +25,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-jest": "^20.0.3",
     "jest": "^20.0.4",
-    "mockdate": "^2.0.5"
+    "mockdate": "^2.0.5",
+    "rimraf": "^2.7.1"
   }
 }
