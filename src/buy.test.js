@@ -3,14 +3,16 @@ import buy from './buy'
 
 jest.mock('./exchangeClients')
 
-describe('when buying coins',()=>{
+describe('when the value is 200',()=>{
 
     let currentValue =200
 
-    cbProPublic.mockImplementation(()=>{
-        return { getProductTicker:jest.fn(() => {
-            return Promise.resolve({  bid: currentValue })
-        })}
+    beforeAll(()=>{
+        cbProPublic.mockImplementation(()=>{
+            return { getProductTicker:jest.fn(() => {
+                return Promise.resolve({  bid: currentValue })
+            })}
+        })
     })
    
     afterEach(()=>{
@@ -67,6 +69,44 @@ describe('when buying coins',()=>{
         
         it('should should not buy any coins',()=>{
             expect(cbProAuthenticated.buy).not.toHaveBeenCalled()
+        })
+    }) 
+})
+
+describe('when the value is 2.934',()=>{
+
+    let currentValue =2.934
+
+    beforeAll(()=>{
+        cbProPublic.mockImplementation(()=>{
+            return { getProductTicker:jest.fn(() => {
+                return Promise.resolve({  bid: currentValue })
+            })}
+        })
+    })
+    afterEach(()=>{
+        cbProAuthenticated.buy.mockClear()
+    })
+
+    describe('and buying EOS',()=>{
+
+        let limitValue = 3
+
+        let expectedTransaction = {
+            'type':'limit',
+            'price': currentValue,
+            'size': '0.3',
+            'product_id': 'EOS-EUR',
+            'cancel_after' :'day',
+            'post_only' : true
+        }
+
+        beforeAll(()=>{      
+            buy(1,'EOS-EUR',limitValue)
+        })
+        
+        it('should place an order with size rounded to nears 0.1',()=>{
+            expect(cbProAuthenticated.buy).toHaveBeenCalledWith(expectedTransaction)
         })
     })
 })
